@@ -1,5 +1,8 @@
 package ua.com.juja.core;
 
+
+import com.sun.deploy.util.StringUtils;
+
 import java.util.Arrays;
 
 /**
@@ -15,16 +18,17 @@ public class PeopleGenerator {
         this.destination = destination;
         this.people = new People[numberofpeople];
 
-        NumberGenerator cHGen = new NumberGenerator(128,159);
-        NumberGenerator chGen = new NumberGenerator(160,175);
-        char[] fio = new char[10];
-        fio[0] = (char) cHGen.getNumber();
-        for (int i = 1; i < fio.length; i++) {
-            fio[i] = (char) chGen.getNumber();
-        }
+        NumberGenerator cHGen = new NumberGenerator(65,90);
+        NumberGenerator chGen = new NumberGenerator(97,122);
 
         for (int i = 0; i < numberofpeople; i++) {
-            this.people[i] = new People(Arrays.toString(fio), destination.toString());
+            String fio = String.valueOf((char) cHGen.getNumber());
+
+            for (int j = 1; j < 9; j++) {
+                fio = fio + String.valueOf((char) chGen.getNumber());
+            }
+            this.people[i] = new People(fio, destination.toString());
+            System.out.println(people[i].toString());
         }
     }
 
