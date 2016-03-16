@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Airline airline = new Airline(10);
 
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÀËÌÀÒÛ",2);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÀÌÑÒÅĞÄÀÌ",2);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÀÑÒÀÍÀ",2);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÂÅÍÀ",1);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÌÀÄĞÈÄ",2);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÏÀĞÈÆ",2);
-        airline.addDestination("ÁÎĞÈÑÏÎËÜ - ÌÎÑÊÂÀ",2);
+        airline.addDestination("BORYSPIL - ALMATY",2);
+        airline.addDestination("BORYSPIL - AMSTERDAM",2);
+        airline.addDestination("BORYSPIL - ASTANA",2);
+        airline.addDestination("BORYSPIL - VEIN",1);
+        airline.addDestination("BORYSPIL - MADRID",2);
+        airline.addDestination("BORYSPIL - PARIS",2);
+        airline.addDestination("BORYSPIL - MOSCOW",2);
 
         //TODO Îäèí ìàññèâ ñ ëşäüìè íà ğàçíûå íàïğàâëåíèÿ
         PeopleGenerator peopleGen1 = new PeopleGenerator(100,airline.getAllFlight()[0]);

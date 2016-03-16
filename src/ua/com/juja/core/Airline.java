@@ -16,6 +16,9 @@ public class Airline {
         for (int index = 0; index < flightNumber; index++) {
             aircrafts[index] = new Aircraft();
         }
+
+        destination = new Destination[0];
+        cashboxes = new Cashbox[0];
     }
 
     public Destination[] getAllFlight(){
@@ -37,8 +40,9 @@ public class Airline {
 
     public void addDestination(String destinations, int numberOfAircraft) {
         Destination dest = new Destination(destinations, numberOfAircraft);
-        addToArray(destination, dest);
-        addToArray(cashboxes, new Cashbox(dest, destination.length * 1000));
+        destination = addToArray(destination, dest);
+        cashboxes = addToArray(cashboxes, new Cashbox(dest, destination.length * 1000));
+        System.out.println("Add " + destinations.toString() + "\n");
     }
 
     private Destination[] addToArray(Destination[] array, Destination s) {
