@@ -21,14 +21,21 @@ public class PeopleGenerator {
         NumberGenerator cHGen = new NumberGenerator(65,90);
         NumberGenerator chGen = new NumberGenerator(97,122);
 
+        System.out.println('\t' + destination.toString());
         for (int i = 0; i < numberofpeople; i++) {
             String fio = String.valueOf((char) cHGen.getNumber());
 
-            for (int j = 1; j < 9; j++) {
+            for (int j = 1; j < 5; j++) {
+                fio = fio + String.valueOf((char) chGen.getNumber());
+            }
+
+            fio = fio + ' ' + String.valueOf((char) cHGen.getNumber());
+
+            for (int j = 1; j < 5; j++) {
                 fio = fio + String.valueOf((char) chGen.getNumber());
             }
             this.people[i] = new People(fio, destination.toString());
-            System.out.println(people[i].toString());
+            System.out.println(i + 1 + ")" + people[i].getFio());
         }
     }
 

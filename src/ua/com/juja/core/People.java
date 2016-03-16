@@ -22,8 +22,5 @@ public class People {
         return FIO.toString();
     }
 
-    @Override
-    public String toString() {
-        return FIO + " - " + destination + '\'';
-    }
+
 }
