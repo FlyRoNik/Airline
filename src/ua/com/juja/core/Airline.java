@@ -10,13 +10,8 @@ public class Airline {
     private Cashbox[] cashboxes;
 
 
-    public Airline(int flightNumber) {
-        aircrafts = new Aircraft[flightNumber];
-
-        for (int index = 0; index < flightNumber; index++) {
-            aircrafts[index] = new Aircraft();
-        }
-
+    public Airline() {
+        aircrafts = new Aircraft[0];
         destination = new Destination[0];
         cashboxes = new Cashbox[0];
     }
@@ -42,7 +37,12 @@ public class Airline {
         Destination dest = new Destination(destinations, numberOfAircraft);
         destination = addToArray(destination, dest);
         cashboxes = addToArray(cashboxes, new Cashbox(dest, destination.length * 1000));
-        System.out.println("Add " + destinations.toString() + "\n");
+        System.out.println("Add " + destinations + "\n");
+    }
+
+    public void addAircraft(String name, int capacity){
+        aircrafts = addToArray(aircrafts,new Aircraft(name, capacity));
+        System.out.println("Add " + aircrafts.toString() + "\n");
     }
 
     private Destination[] addToArray(Destination[] array, Destination s) {
@@ -54,6 +54,13 @@ public class Airline {
 
     private Cashbox[] addToArray(Cashbox[] array, Cashbox s) {
         Cashbox[] ans = new Cashbox[array.length + 1];
+        System.arraycopy(array, 0, ans, 0, array.length);
+        ans[ans.length - 1] = s;
+        return ans;
+    }
+
+    private Aircraft[] addToArray(Aircraft[] array, Aircraft s) {
+        Aircraft[] ans = new Aircraft[array.length + 1];
         System.arraycopy(array, 0, ans, 0, array.length);
         ans[ans.length - 1] = s;
         return ans;
