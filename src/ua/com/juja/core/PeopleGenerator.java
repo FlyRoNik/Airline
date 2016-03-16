@@ -24,9 +24,19 @@ public class PeopleGenerator {
         }
 
         for (int i = 0; i < numberofpeople; i++) {
-            this.people[i] = new People(Arrays.toString(fio), destination);
+            this.people[i] = new People(Arrays.toString(fio), destination.toString());
         }
     }
 
+    public People[] getPeople(){
+        People[] peoples = new People[this.people.length];
+        for (int i = 0; i < this.people.length; i++) {
+            peoples[i] = new People(this.people[i].getFio(),this.people[i].getDestination());
+        }
+        return peoples;
+    }
 
+    public int getNumberofpeople(){
+        return numberofpeople;
+    }
 }

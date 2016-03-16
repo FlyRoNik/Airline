@@ -6,15 +6,21 @@ package ua.com.juja.core;
 public class People {
 
     private String FIO;
-    private Destination destination;
+    private String destination;
 
 
-    public People(String fio, Destination destination) {
+    public People(String fio, String destination) {
         FIO = fio;
         this.destination = destination;
     }
 
-    public Destination getDestination(){
-        return new Destination(this.destination.toString());
+    public String getDestination() {
+        return destination;
     }
+
+    public String getFio(){
+        return FIO.toString();
+    }
+
+
 }
