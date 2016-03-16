@@ -20,7 +20,6 @@ public class Aircraft {
 
     @Override
     public String toString() {
-        return name + "(" + capacity + ") " +
-                destination.toString();
+        return name + "(" + capacity + ")" + "\n";
     }
 }

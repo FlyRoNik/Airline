@@ -19,7 +19,7 @@ public class People {
     }
 
     public String getFio(){
-        return FIO.toString();
+        return FIO;
     }
 
 

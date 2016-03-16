@@ -41,8 +41,9 @@ public class Airline {
     }
 
     public void addAircraft(String name, int capacity){
-        aircrafts = addToArray(aircrafts,new Aircraft(name, capacity));
-        System.out.println("Add " + aircrafts.toString() + "\n");
+        Aircraft aircraft = new Aircraft(name, capacity);
+        aircrafts = addToArray(aircrafts,aircraft);
+        System.out.println("Add " + aircraft.toString() + "\n");
     }
 
     private Destination[] addToArray(Destination[] array, Destination s) {
