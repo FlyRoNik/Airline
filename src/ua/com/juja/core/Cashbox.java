@@ -15,7 +15,7 @@ public class Cashbox {
     }
 
     public Destination getDestination() {
-        return new Destination(this.destinations.toString(),this.destinations.getNumberOfAircraft());
+        return new Destination(this.destinations.toString());
     }
 
     public void addPassenger(People people) {

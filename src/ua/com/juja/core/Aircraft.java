@@ -5,21 +5,40 @@ package ua.com.juja.core;
  */
 public class Aircraft {
     private String name;
-    private int capacity;
-    private Destination destination;
+    private int capacityBusiness;
+    private int capacityEconomy;
 
 
-    public Aircraft(String name, int capacity) {
+    public Aircraft(String name, int capacityEconomy) {
         this.name = name;
-        this.capacity = capacity;
+        this.capacityEconomy = capacityEconomy;
+        this.capacityBusiness = 0;
     }
 
-    public void setDestination(Destination destination) {
-        this.destination = destination;
+    public Aircraft(String name, int capacityEconomy, int capacityBusiness) {
+        this.name = name;
+        this.capacityEconomy = capacityEconomy;
+        this.capacityBusiness = capacityBusiness;
     }
 
     @Override
     public String toString() {
-        return name + "(" + capacity + ")" + "\n";
+        if (capacityBusiness != 0) {
+            return name + "(" + capacityEconomy + ", " + capacityBusiness + ")" + "\n";
+        } else {
+            return name + "(" + capacityEconomy + ")" + "\n";
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCapacityBusiness() {
+        return capacityBusiness;
+    }
+
+    public int getCapacityEconomy() {
+        return capacityEconomy;
     }
 }

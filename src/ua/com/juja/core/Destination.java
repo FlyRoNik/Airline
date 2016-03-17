@@ -5,19 +5,30 @@ package ua.com.juja.core;
  */
 public class Destination {
     private String destination;
-    private int numberOfAircraft;
+    private Aircraft[] fleet;
 
     @Override
     public String toString() {
         return destination;
     }
 
-    public Destination(String destination, int numberOfAircraft) {
+    public Destination(String destination) {
         this.destination = destination;
-        this.numberOfAircraft = numberOfAircraft;
+        fleet = new Aircraft[0];
+    }
+
+    public void setFleet(Aircraft aircraft) {
+        fleet = addToArray(fleet, aircraft);
     }
 
     public int getNumberOfAircraft() {
-        return numberOfAircraft;
+        return fleet.length;
+    }
+
+    private Aircraft[] addToArray(Aircraft[] array, Aircraft s) {
+        Aircraft[] ans = new Aircraft[array.length + 1];
+        System.arraycopy(array, 0, ans, 0, array.length);
+        ans[ans.length - 1] = s;
+        return ans;
     }
 }
