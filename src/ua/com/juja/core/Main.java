@@ -26,7 +26,8 @@ public class Main {
         airline.addAircraft("Airbus A340-600", 380 , 60);
         airline.addAircraft("Airbus A340-600", 380 , 60);
 
-        airline.setAircraftToDistination(airline.getAllFlight()[0],airline.getAircrafts()[0]);
+        airline.setAircraftToDistination(airline.getAllFlight()[0],airline.getAircrafts()[2]);
+        airline.setAircraftToDistination(airline.getAllFlight()[1],airline.getAircrafts()[0]);
 
         //TODO Один массив с людьми на разные направления
         PeopleGenerator peopleGen1 = new PeopleGenerator(100,airline.getAllFlight()[0]);

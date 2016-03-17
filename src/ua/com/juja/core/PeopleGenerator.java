@@ -21,7 +21,7 @@ public class PeopleGenerator {
         NumberGenerator cHGen = new NumberGenerator(65,90);
         NumberGenerator chGen = new NumberGenerator(97,122);
 
-        System.out.println('\t' + destination.toString());
+        System.out.println("\n" + destination.toString());
         for (int i = 0; i < numberofpeople; i++) {
             String fio = String.valueOf((char) cHGen.getNumber());
 

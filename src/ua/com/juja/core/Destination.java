@@ -1,16 +1,13 @@
 package ua.com.juja.core;
 
+import java.util.Arrays;
+
 /**
  * Created by FlyRoNik on 09.03.2016.
  */
 public class Destination {
     private String destination;
     private Aircraft[] fleet;
-
-    @Override
-    public String toString() {
-        return destination;
-    }
 
     public Destination(String destination) {
         this.destination = destination;
@@ -30,5 +27,19 @@ public class Destination {
         System.arraycopy(array, 0, ans, 0, array.length);
         ans[ans.length - 1] = s;
         return ans;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    @Override
+    public String toString() {
+        String s = destination + ":\n\t";
+        for (Aircraft aircraft : fleet) {
+            s = s + aircraft.toString() + "\t";
+        }
+
+        return s;
     }
 }

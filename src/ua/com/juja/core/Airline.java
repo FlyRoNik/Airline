@@ -21,7 +21,7 @@ public class Airline {
     public Destination[] getAllFlight(){
         Destination[] destinations = new Destination[this.destination.length];
         for (int i = 0; i < this.destination.length; i++) {
-            destinations[i] = new Destination(this.destination[i].toString());
+            destinations[i] = new Destination(this.destination[i].getDestination());
         }
         return destinations;
     }
@@ -86,5 +86,6 @@ public class Airline {
 
     public void setAircraftToDistination (Destination destination, Aircraft aircraft) {
         destination.setFleet(aircraft);
+        System.out.println("Set " + destination.toString());
     }
 }
