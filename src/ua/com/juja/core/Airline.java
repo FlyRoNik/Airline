@@ -1,5 +1,7 @@
 package ua.com.juja.core;
 
+import ua.com.juja.core.People.People;
+
 /**
  * Created by FlyRoNik on 09.03.2016.
  */
@@ -26,22 +28,18 @@ public class Airline {
         return destinations;
     }
 
-    public Aircraft[] getAircrafts() {
-        Aircraft[] aircrafts = new Aircraft[this.aircrafts.length];
+    public Aircraft[] getAircraft() {
+        Aircraft[] aircraft = new Aircraft[this.aircrafts.length];
         for (int i = 0; i < this.aircrafts.length; i++) {
-            aircrafts[i] = new Aircraft(this.aircrafts[i].getName(),
-                    this.aircrafts[i].getCapacityEconomy(),
-                    this.aircrafts[i].getCapacityBusiness());
+            aircraft[i] = new Aircraft(this.aircrafts[i].getName(),
+                    this.aircrafts[i].getCapacityService(),
+                    this.aircrafts[i].getCapacity());
         }
-        return aircrafts;
+        return aircraft;
     }
 
     public void addPassenger(People people){
-        for (Cashbox cashboxe : cashboxes) {
-            if (cashboxe.getDestination().toString() == people.getDestination()) {
-                cashboxe.addPassenger(people);
-            }
-        }
+        getCashbooksToDestination(getDestinationToString(people.getDestination())).addPassenger(people);
     }
 
     public void addDestination(String destinations) {
@@ -51,15 +49,9 @@ public class Airline {
         System.out.println("Add " + destinations + "\n");
     }
 
-    public void addAircraft(String name, int capacityEconomy, int capacityBusiness){
-        Aircraft aircraft = new Aircraft(name, capacityEconomy, capacityBusiness);
-        aircrafts = addToArray(aircrafts,aircraft);
-        System.out.println("Add " + aircraft.toString() + "\n");
-    }
-
-    public void addAircraft(String name, int capacityEconomy){
-        Aircraft aircraft = new Aircraft(name, capacityEconomy);
-        aircrafts = addToArray(aircrafts,aircraft);
+    public void addAircraft(String name, int capacityService, int capacityEconomy) {
+        Aircraft aircraft = new Aircraft(name, capacityService, capacityEconomy);
+        aircrafts = addToArray(aircrafts, aircraft);
         System.out.println("Add " + aircraft.toString() + "\n");
     }
 
@@ -84,8 +76,27 @@ public class Airline {
         return ans;
     }
 
-    public void setAircraftToDistination (Destination destination, Aircraft aircraft) {
+    public void setAircraftToDestination(Destination destination, Aircraft aircraft) {
         destination.setFleet(aircraft);
         System.out.println("Set " + destination.toString());
+    }
+
+    public Cashbox getCashbooksToDestination(Destination destination) {
+        for (Cashbox cashbox : cashboxes) {
+            if (cashbox.getDestination().getDestination() == destination.getDestination()) {
+                return cashbox;
+            }
+        }
+        return null;
+    }
+
+    public Destination getDestinationToString(String s) {
+        for (Destination d : destination) {
+            if (d.getDestination() == s) {
+                continue;
+            }
+            return d;
+        }
+        return null;
     }
 }

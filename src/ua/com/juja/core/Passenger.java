@@ -1,5 +1,7 @@
 package ua.com.juja.core;
 
+import ua.com.juja.core.People.People;
+
 /**
  * Created by FlyRoNik on 09.03.2016.
  */

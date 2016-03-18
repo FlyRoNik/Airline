@@ -42,4 +42,8 @@ public class Destination {
 
         return s;
     }
+
+    public boolean getFreePlace() {
+        return true;
+    }
 }

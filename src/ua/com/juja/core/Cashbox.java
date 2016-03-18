@@ -1,5 +1,8 @@
 package ua.com.juja.core;
 
+import ua.com.juja.core.Generator.FlyerNumberGenerator;
+import ua.com.juja.core.People.People;
+
 /**
  * Created by FlyRoNik on 09.03.2016.
  */
@@ -27,5 +30,10 @@ public class Cashbox {
         System.arraycopy(array, 0, ans, 0, array.length);
         ans[ans.length - 1] = s;
         return ans;
+    }
+
+    public boolean getFreePlace() {
+
+        return true;
     }
 }

@@ -1,28 +1,25 @@
-package ua.com.juja.core;
+package ua.com.juja.core.Generator;
 
 
-import com.sun.deploy.util.StringUtils;
-
-import java.util.Arrays;
+import ua.com.juja.core.Destination;
+import ua.com.juja.core.People.People;
 
 /**
  * Created by FlyRoNik on 09.03.2016.
  */
 public class PeopleGenerator {
-    private Destination destination;
-    private int numberofpeople;
+    private int numberOfPeople;
     private People[] people;
 
-    public PeopleGenerator(int numberofpeople, Destination destination) {
-        this.numberofpeople = numberofpeople;
-        this.destination = destination;
-        this.people = new People[numberofpeople];
+    public PeopleGenerator(int numberOfPeople, Destination destination) {
+        this.numberOfPeople = numberOfPeople;
+        this.people = new People[numberOfPeople];
 
         NumberGenerator cHGen = new NumberGenerator(65,90);
         NumberGenerator chGen = new NumberGenerator(97,122);
 
         System.out.println("\n" + destination.toString());
-        for (int i = 0; i < numberofpeople; i++) {
+        for (int i = 0; i < numberOfPeople; i++) {
             String fio = String.valueOf((char) cHGen.getNumber());
 
             for (int j = 1; j < 5; j++) {
@@ -47,7 +44,7 @@ public class PeopleGenerator {
         return peoples;
     }
 
-    public int getNumberofpeople(){
-        return numberofpeople;
+    public int getNumberOfPeople(){
+        return numberOfPeople;
     }
 }

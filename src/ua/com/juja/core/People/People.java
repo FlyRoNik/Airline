@@ -1,4 +1,4 @@
-package ua.com.juja.core;
+package ua.com.juja.core.People;
 
 /**
  * Created by FlyRoNik on 09.03.2016.

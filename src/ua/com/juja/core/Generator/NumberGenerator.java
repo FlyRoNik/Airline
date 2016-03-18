@@ -1,4 +1,4 @@
-package ua.com.juja.core;
+package ua.com.juja.core.Generator;
 
 /**
  * Created by FlyRoNik on 09.03.2016.
